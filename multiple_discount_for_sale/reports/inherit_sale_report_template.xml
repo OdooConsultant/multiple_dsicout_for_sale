@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//t[@t-set='display_discount']" position="after">
+            <t t-set="display_discount2" t-value="any([l.discount2 for l in doc.order_line])"/>
+            <t t-set="display_discount3" t-value="any([l.discount3 for l in doc.order_line])"/>
+        </xpath>
+        <xpath expr="//th[@name='th_taxes']" position="before">
+            <th name="th_discount2" t-if="display_discount2" class="text-right">
+                <span>Disc2.%</span>
+            </th>
+            <th name="th_discount3" t-if="display_discount3" class="text-right">
+                <span>Disc3.%</span>
+            </th>
+        </xpath>
+        <xpath expr="//td[@name='td_taxes']" position="before">
+            <td t-if="display_discount2" class="text-right">
+                <span t-field="line.discount2"/>
+            </td>
+            <td t-if="display_discount3" class="text-right">
+                <span t-field="line.discount3"/>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>
