@@ -11,6 +11,8 @@ Multiple Discounts For Sale
 
  This module shows a 2 other level of discount in the <i>sale order</i>.
     """,
+    'license': 'AGPL-3',
+    'images': ['static/description/icon.png'],
     "development_status": "Beta",
     "category": "Sale",
     'author': 'Odoo Consultant medconsultantweb@gmail.com',
