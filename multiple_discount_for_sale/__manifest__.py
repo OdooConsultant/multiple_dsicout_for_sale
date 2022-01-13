@@ -23,6 +23,7 @@ Multiple Discounts For Sale
     'depends': ['sale_management', 'sale_margin','account'],
     'demo': [],
     'data': [
+        'views/inherited_sale_view.xml',
         'reports/inherit_sale_report_template.xml'
     ],
 }
